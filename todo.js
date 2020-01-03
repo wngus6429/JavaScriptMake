@@ -4,8 +4,27 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
+function filterFn(toDO) {
+  //이 filter가 하는 것은 array를 만들것임.
+  return toDo.id === 1;
+}
+
 //연결1
-const toDos = []; //해야할 일을 생성했을 때 그게 이 toDos array에 추가되게 하기
+let toDos = []; //해야할 일을 생성했을 때 그게 이 toDos array에 추가되게 하기
+
+//다음 강의
+function deleteToDo(event) {
+  const btn = event.target;
+  const li = btn.parentNode;
+  toDoList.removeChild(li);
+  //이 부분으로 인해 이모티콘 누르면 삭제가 가능해진다.
+  //하지만 새로고침하면 그대로 있음. 그래서 수정해야함.
+  const cleanToDos = toDos.filter(function(toDo) {
+    return toDo.id !== parseInt(li.id);
+  }); //필터는 함수 하나를 실행 시킬것임.
+  toDos = cleanToDos;
+  saveToDos();
+}
 
 function saveToDos() {
   //연결2
@@ -18,6 +37,7 @@ function paintToDo(text) {
   const span = document.createElement("span");
   const newId = toDos.length + 1;
   delBtn.innerHTML = "🐱";
+  delBtn.addEventListener("click", deleteToDo);
   span.innerText = text;
   li.appendChild(delBtn);
   li.appendChild(span);
@@ -58,3 +78,5 @@ function init() {
 }
 
 init();
+
+//filter와 forEach를 잘 기억해야함.
