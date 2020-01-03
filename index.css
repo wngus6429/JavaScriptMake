@@ -1,16 +1,16 @@
 body {
-  background-color: #7b7e81;
+  background-color: yellowgreen;
 }
 
 .btn {
   cursor: pointer;
 }
-h1 {
-  color: yellow;
+body {
+  color: #34495e;
 }
 
 .clicked {
-  color: red;
+  color: #7f8c8d;
 }
 
 .form,
@@ -19,5 +19,5 @@ h1 {
 }
 
 .showing {
-  display: none;
+  display: block;
 }
