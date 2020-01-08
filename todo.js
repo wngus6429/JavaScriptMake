@@ -71,12 +71,10 @@ function loadToDos() {
     //console.log(parsedToDos);
   }
 }
-
 function init() {
   loadToDos();
   toDoForm.addEventListener("submit", handleSubmit);
 }
-
 init();
 
 //filter와 forEach를 잘 기억해야함.
