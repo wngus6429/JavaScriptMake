@@ -9,6 +9,10 @@ body {
   color: #34495e;
 }
 
+h1 {
+  color: red;
+}
+
 .clicked {
   color: #7f8c8d;
 }
