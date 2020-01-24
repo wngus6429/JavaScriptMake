@@ -17,7 +17,7 @@ function handleSubmit(event) {
   saveName(currentValue); //입력한걸 로컬에 저장하는 기능
 }
 
-function askForName() {
+function askForName(){
   form.classList.add(SHOWING_CN); //form classList에 showing을 추가함
   form.addEventListener("submit", handleSubmit); //앤터 누르면 handlesubmit작동
 }
