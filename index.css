@@ -40,3 +40,7 @@ body {
   z-index: -1;
   animation: fadeIn 1s linear;
 }
+
+.js-weather {
+  font-size: 30px;
+}
