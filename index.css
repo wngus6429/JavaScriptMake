@@ -9,8 +9,26 @@ body {
   color: #34495e;
 }
 
+.js-weather {
+  font-size: 30px;
+  text-align: center;
+}
+
+.js-toDoForm {
+  text-align: center;
+  width: 100%;
+}
+
+.js-toDoList {
+  text-align: center;
+  font-size: 50px;
+  color: greenyellow;
+}
+
 h1 {
   color: red;
+  text-align: center;
+  font-size: 80px;
 }
 
 .clicked {
@@ -20,6 +38,9 @@ h1 {
 .form,
 .greetings {
   display: none;
+  text-align: center;
+  font-size: 50px;
+  color: yellow;
 }
 
 .showing {
@@ -43,8 +64,4 @@ h1 {
   height: 100%;
   z-index: -1;
   animation: fadeIn 1s linear;
-}
-
-.js-weather {
-  font-size: 30px;
 }
