@@ -4,7 +4,7 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
 const TODOS_LS = "toDos";
 
-function filterFn(toDO) {
+function filterFn(toDo) {
   //이 filter가 하는 것은 array를 만들것임.
   return toDo.id === 1;
 }
