@@ -1,6 +1,8 @@
-const form = document.querySelector(".js-form"),
-  input = form.querySelector("input"),
-  greeting = document.querySelector(".js-greetings");
+/** @format */
+
+const form = document.querySelector(".js-form");
+const input = form.querySelector("input");
+const greeting = document.querySelector(".js-greetings");
 
 const USER_LS = "currentUser";
 const SHOWING_CN = "showing";
@@ -17,7 +19,7 @@ function handleSubmit(event) {
   saveName(currentValue); //입력한걸 로컬에 저장하는 기능
 }
 
-function askForName(){
+function askForName() {
   form.classList.add(SHOWING_CN); //form classList에 showing을 추가함
   form.addEventListener("submit", handleSubmit); //앤터 누르면 handlesubmit작동
 }
@@ -29,7 +31,7 @@ function paintGreeting(text) {
 }
 
 function loadName() {
-  const currentUser = localStorage.getItem(USER_LS); //기존에 있나?
+  const currentUser = localStorage.getItem(USER_LS); //기존에 있나? 없으면 당연 만들어야지
   if (currentUser === null) {
     askForName();
   } else {
