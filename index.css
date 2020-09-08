@@ -1,3 +1,5 @@
+/** @format */
+
 body {
   background-color: #7f8c8d;
 }
@@ -10,8 +12,13 @@ body {
 }
 
 .js-weather {
-  font-size: 30px;
+  font-size: 60px;
   text-align: center;
+  color: red;
+}
+
+li {
+  list-style: none;
 }
 
 .js-toDoForm {

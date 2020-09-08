@@ -1,6 +1,8 @@
-const toDoForm = document.querySelector(".js-toDoForm"),
-  toDoInput = toDoForm.querySelector("input"),
-  toDoList = document.querySelector(".js-toDoList");
+/** @format */
+
+const toDoForm = document.querySelector(".js-toDoForm");
+const toDoInput = toDoForm.querySelector("input");
+const toDoList = document.querySelector(".js-toDoList");
 
 const TODOS_LS = "toDos";
 
@@ -19,9 +21,11 @@ function deleteToDo(event) {
   toDoList.removeChild(li);
   //이 부분으로 인해 이모티콘 누르면 삭제가 가능해진다.
   //하지만 새로고침하면 그대로 있음. 그래서 수정해야함.
-  const cleanToDos = toDos.filter(function(toDo) {
+  const cleanToDos = toDos.filter(function (toDo) {
+    console.log(toDo);
     return toDo.id !== parseInt(li.id);
   }); //필터는 함수 하나를 실행 시킬것임.
+  console.log(cleanToDos);
   toDos = cleanToDos;
   saveToDos();
 }
@@ -42,10 +46,11 @@ function paintToDo(text) {
   li.appendChild(delBtn);
   li.appendChild(span);
   li.id = newId;
+  console.log(li);
   toDoList.appendChild(li);
   const toDoObj = {
     text: text,
-    id: newId
+    id: newId,
   };
   toDos.push(toDoObj);
   saveToDos();
@@ -63,7 +68,7 @@ function loadToDos() {
     //toDos를 불러오는 작업
     //console.log(loadedToDos);
     const parsedToDos = JSON.parse(loadedToDos);
-    parsedToDos.forEach(function(toDo) {
+    parsedToDos.forEach(function (toDo) {
       paintToDo(toDo.text);
     });
     // forEach는 기본적으로 함수를 실행하는데.
